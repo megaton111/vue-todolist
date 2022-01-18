@@ -1,0 +1,42 @@
+
+.tab-buttons{
+  $height-tab : 40px ; 
+  display: flex;
+  width: 100% ;
+  flex-direction: row ;
+  box-shadow: rgb(0 0 0 / 15%) 0px 5px 5px ;
+  .tab {
+    position: relative;
+    display: inline-flex;
+    flex : 1 ; 
+    height : $height-tab; 
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 0 ;
+    border : 0 ; 
+    background-color: #8c49f8;
+    color:#bfa0f8 ; 
+    cursor: pointer;
+    letter-spacing: -.5px ;
+    &.active {
+      color:#fff ; 
+      font-weight: 700 ;
+      &:after {
+        content :"" ; 
+        display: inline-flex;
+        position: absolute;
+        left : 0 ; bottom: 0 ; right : 0 ; 
+        height : 4px ; 
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+.tab-contents{
+  display: flex;
+  flex-direction: column ;
+  flex : 1 ;
+  padding: 10px ; 
+}
