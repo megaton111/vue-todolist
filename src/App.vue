@@ -15,6 +15,8 @@
       </keep-alive>
     </tabContentWrap> <!-- end of tab-contents -->
 
+    <registerWrap></registerWrap>
+
   </containerWrap>
 
 </template>
@@ -25,6 +27,7 @@ import headerWrap from './components/layout/header' ;
 import containerWrap from './components/layout/container' ; 
 import tabButtonWrap from './components/layout/tabButtons' ; 
 import tabContentWrap from './components/layout/tabContent' ; 
+import registerWrap from './components/layout/register' ; 
 import TODO from './components/common/todo' ; // eslint-disable-line no-unused-vars
 import DONE from './components/common/done' ; // eslint-disable-line no-unused-vars
 // import { computed } from "vue";
@@ -38,6 +41,7 @@ export default {
     containerWrap ,
     tabButtonWrap , 
     tabContentWrap , 
+    registerWrap , 
     TODO ,
     DONE
   },

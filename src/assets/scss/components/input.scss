@@ -1,0 +1,38 @@
+
+.inputWrap{
+  display: flex;
+  position: relative;
+  flex-shrink: 0 ;
+  width: 100% ;
+  padding: 10px ; 
+  gap: 5px ; 
+  box-shadow: rgb(0 0 0 / 5%) 0px -5px 5px ;
+  z-index: 100 ;
+
+  .input {
+    display: flex;
+    flex : 1 ; 
+    input {
+      width: 100% ; 
+      border-color : #8c49f8 ; 
+    }
+  }
+  .button {
+    display: inline-flex;
+    flex-basis: 80px ;
+    height: 100% ;
+    button {
+      display: inline-flex;
+      align-items: center ;
+      justify-content: center ;
+      width: 100% ;
+      // border : 1px solid #8c49f8 ; 
+      background-color:#8c49f8 ; 
+      color:#fff ;
+      border-radius: 4px;
+      outline: 0 ;
+      border : 0 ;
+      cursor: pointer;
+    }
+  }
+}

@@ -11,6 +11,10 @@ const todoStore = {
     ] ,
   },
   mutations: {
+    addList( state, value ) {
+      state.todoList.push({ title: value, done: false }); 
+      console.log('list :', state.todoList); 
+    }
   },
   getters: {
     todo(state) {

@@ -6,6 +6,7 @@
   gap:5px ; 
   .item {
     display: flex;
+    flex-shrink: 0 ;
     align-items: center ;
     gap:10px; 
     padding:10px ; 

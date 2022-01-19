@@ -2,6 +2,7 @@
 .tab-buttons{
   $height-tab : 40px ; 
   display: flex;
+  flex-shrink: 0 ;
   width: 100% ;
   flex-direction: row ;
   box-shadow: rgb(0 0 0 / 15%) 0px 5px 5px ;
@@ -37,6 +38,24 @@
 .tab-contents{
   display: flex;
   flex-direction: column ;
-  flex : 1 ;
+  flex : 1 1 auto ;
+  overflow-y:auto ; 
+  height: 0 ;
   padding: 10px ; 
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  &::-webkit-scrollbar-track {
+    background: #eeeeee;
+    border-radius: 5px;
+  }
+   
+  &::-webkit-scrollbar-thumb {
+    // background: linear-gradient(#c2e59c, #64b3f4);
+    background: rgb(136, 136, 136) ;
+    border-radius: 5px;
+  }
+
 }

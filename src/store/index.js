@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 import todoStore from './modules/todoData';
 
 export default createStore({
-  strict: true,
+  strict: false ,
   modules: {
     todoStore: todoStore,
   },
