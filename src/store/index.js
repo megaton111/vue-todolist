@@ -1,18 +1,10 @@
 import { createStore } from "vuex";
+import todoStore from './modules/todoData';
 
 export default createStore({
-  state: {
-    // counter: 10
+  strict: true,
+  modules: {
+    todoStore: todoStore,
   },
-  getters: {
-    // time2(state) {
-    //   return state.counter * 2;
-    // }
-  },
-  mutations: {
-    // setCounter(state, value) {
-    //   state.counter = value;
-    // }
-  }
 });
  
