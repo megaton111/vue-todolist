@@ -14,8 +14,8 @@
         <component v-bind:is="comp"></component> 
       </keep-alive>
     </tabContentWrap> <!-- end of tab-contents -->
-
-    <registerWrap></registerWrap>
+    
+    <registerWrap v-if="comp == 'TODO'"></registerWrap>
 
   </containerWrap>
 

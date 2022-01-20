@@ -6,34 +6,31 @@
 </template>
 
 <script>
-  // import {ref} from 'vue';
-  // import { useStore } from "vuex";
+  import {ref} from 'vue';
+  import { useStore } from "vuex";
   export default {
     name : 'register' ,
-    data () {
-      return {
-        todoValue : null 
-      }
-    } ,
-    methods : {
-      addListHandler() {
-        this.$store.commit("addList", this.todoValue ) ; 
-        this.todoValue = '' ; 
-      }
-    }
-    // setup() {
-    //   const store = useStore();
-    //   let todoValue = ref('') ; 
-    //   const addListHandler = () => {
-    //     store.commit("addList", todoValue ) ; 
-    //   };
-    //   return { todoValue , addListHandler } ;
+    
+    // data () {
+    //   return {
+    //     todoValue : null 
+    //   }
+    // } ,
+    // methods : {
+    //   addListHandler() {
+    //     this.$store.commit("addList", this.todoValue ) ; 
+    //     this.todoValue = '' ; 
+    //   }
     // }
 
-    
+    setup() {
+      const store = useStore();
+      let todoValue = ref('') ; 
+      const addListHandler = () => {
+        store.commit("addList", todoValue.value ) ; 
+        todoValue.value = '' ;
+      };
+      return { todoValue , addListHandler } ;
+    }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
