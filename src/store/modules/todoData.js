@@ -33,7 +33,10 @@ const todoStore = {
     } ,
     done(state) {
       return state.todoList.filter(item => item.done);
-    } ,
+    },
+    todoLen(state) {
+      return state.todoList.filter(item => !item.done).length ;
+    }
   }
 }; 
 export default todoStore;

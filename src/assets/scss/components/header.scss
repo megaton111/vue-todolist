@@ -9,4 +9,22 @@
     color:#fff ; 
     font-size:20px ; 
   }
+  .count {
+    display: inline-flex;
+    align-items: center ;
+    margin-left: auto ;
+    color:#fff ; 
+    gap:5px ; 
+    span {
+      display: inline-flex;
+      align-items: center ;
+      justify-content: center ;
+      width: 20px; height :20px ;
+      padding-top:2px ; 
+      background-color: #fff;
+      color:#8c49f8 ; 
+      border-radius: 50% ;
+      font-weight: 700 ;
+    }
+  }
 }
