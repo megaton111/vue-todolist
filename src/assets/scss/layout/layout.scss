@@ -14,3 +14,24 @@ html, body { height: 100% ; overflow: hidden !important ;}
   }
 }
 
+.count {
+  display: inline-flex;
+  align-items: center ;
+  margin-left: auto ;
+  color:#fff ; 
+  gap:10px ; 
+  $circle-width: 26px ; 
+  span {
+    display: inline-flex;
+    align-items: center ;
+    justify-content: center ;
+    width: $circle-width; height :$circle-width ;
+    // padding-top:2px ; 
+    background-color: #fff;
+    color:#8c49f8 ; 
+    border-radius: 50% ;
+    font-weight: 700 ;
+    font-size:16px ; 
+    letter-spacing: -1px ;
+  }
+}

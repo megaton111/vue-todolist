@@ -25,7 +25,14 @@ const todoStore = {
       let getIdx = value; 
       let findIdx = state.todoList.findIndex((item) => item.index == getIdx); 
       state.todoList[findIdx].done = !state.todoList[findIdx].done;
-    }
+    },
+    // updateList(state, value) {
+    //   let getIdx = value.idx ; 
+    //   let findIdx = state.todoList.findIndex((item) => item.index == getIdx); 
+    //   console.log('findIdx :', findIdx); 
+    //   console.log('change title :', value.title);
+    //   state.todoList[findIdx].title = value.title ;
+    // }
   },
   getters: {
     todo(state) {

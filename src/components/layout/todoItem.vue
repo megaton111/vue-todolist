@@ -22,7 +22,7 @@
     props : [ 'items' ] ,
     methods : {
       removeHandler( value ) { this.$store.commit( "removeList", value ) ; } , 
-      checkHandler ( value ) { this.$store.commit( "checkList", value ) ; }
+      checkHandler ( value ) { this.$store.commit( "checkList", value ) ; } , 
     }
   }
 </script>
