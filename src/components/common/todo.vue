@@ -7,7 +7,6 @@
 <script>
   import todoListWrap from '../layout/todoList' ; 
   import todoItem from '../layout/todoItem' ; 
-  // import { mapState } from 'vuex' ;
   import { computed } from "vue";
   import { useStore } from "vuex";
 

@@ -1,6 +1,8 @@
 <template>
   
-  <headerWrap />
+  <headerWrap title="Task">
+    <count label="남은 할일" /> 
+  </headerWrap>
 
   <containerWrap>
     
@@ -30,12 +32,10 @@ import tabContentWrap from './components/layout/tabContent' ;
 import registerWrap from './components/layout/register' ; 
 import TODO from './components/common/todo' ; // eslint-disable-line no-unused-vars
 import DONE from './components/common/done' ; // eslint-disable-line no-unused-vars
-// import { computed } from "vue";
-// import { useStore } from "vuex";
+import count from './components/common/count' ; 
 
 export default {
   name: 'App',
-
   components: {
     headerWrap , 
     containerWrap ,
@@ -43,9 +43,9 @@ export default {
     tabContentWrap , 
     registerWrap , 
     TODO ,
-    DONE
+    DONE ,
+    count
   },
-
   setup() {
     let comp = ref('TODO') 
     ,   tabs = [ { name : 'TO DO', value : 'TODO' }, { name : 'DONE', value : 'DONE' } ] 

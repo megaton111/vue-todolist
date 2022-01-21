@@ -1,17 +1,18 @@
 <template>
-  <header class="header">
-    <h1 v-if="title">{{ title }}</h1>
-    <slot></slot>
-  </header>
+  <div class="count">
+    <p v-if="label">{{ label }}</p>
+    <span>{{ todoLen }}</span>
+  </div>
 </template>
-
 <script>
   import { computed } from "vue";
   import { useStore } from "vuex";
   export default {
-    name : 'headerWrap' ,
+    name : 'count' , 
     props : {
-      title : String ,
+      label : {
+        type: String,
+      }
     } ,
     setup () {
       const store = useStore();
@@ -20,3 +21,7 @@
     } 
   }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
