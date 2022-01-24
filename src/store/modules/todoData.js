@@ -1,13 +1,20 @@
+const findListIdx = (idx, arr) => {
+  let targetIdx = idx
+    , list = arr
+    ;  
+    return list.findIndex((item) => item.index == targetIdx); 
+}
+
 const todoStore = {
   state: {
-    idx : 6 , 
+    idx : 0 , 
     todoList: [
-      { index : 0, title: 'vue js 공식문서 보기', done : false } ,
-      { index : 1, title: '투두리스트 작업', done : false } ,
-      { index : 2, title: '가이드 공유', done : false } ,
-      { index : 3, title: '공통 디자인 시안 작업', done : false } ,
-      { index : 4, title: '기획자 미팅', done : false } ,
-      { index : 5, title: '개발 리뷰', done : false } ,
+      // { index : 0, title: 'vue js 공식문서 보기', done : false } ,
+      // { index : 1, title: '투두리스트 작업', done : false } ,
+      // { index : 2, title: '가이드 공유', done : false } ,
+      // { index : 3, title: '공통 디자인 시안 작업', done : false } ,
+      // { index : 4, title: '기획자 미팅', done : false } ,
+      // { index : 5, title: '개발 리뷰', done : false } ,
     ] ,
   },
   mutations: {
@@ -17,22 +24,17 @@ const todoStore = {
       state.todoList.push({ title: value, done: false, index : index }); 
     },
     removeList(state, value) {
-      let getIdx = value; 
-      let findIdx = state.todoList.findIndex((item) => item.index == getIdx); 
+      let findIdx = findListIdx(value, state.todoList); 
       state.todoList.splice(findIdx, 1); 
     },
     checkList(state, value) {
-      let getIdx = value; 
-      let findIdx = state.todoList.findIndex((item) => item.index == getIdx); 
+      let findIdx = findListIdx(value, state.todoList); 
       state.todoList[findIdx].done = !state.todoList[findIdx].done;
     },
-    // updateList(state, value) {
-    //   let getIdx = value.idx ; 
-    //   let findIdx = state.todoList.findIndex((item) => item.index == getIdx); 
-    //   console.log('findIdx :', findIdx); 
-    //   console.log('change title :', value.title);
-    //   state.todoList[findIdx].title = value.title ;
-    // }
+    modifyList(state, value) { 
+      let findIdx = findListIdx(value.idx, state.todoList); 
+      state.todoList[findIdx].title = value.title; 
+    }
   },
   getters: {
     todo(state) {

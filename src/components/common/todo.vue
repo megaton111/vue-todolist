@@ -1,6 +1,8 @@
 <template>
   <todoListWrap>
-    <todoItem :items="todos"></todoItem>
+    <template v-for="(item, idx) in todos" :key="idx">
+      <todoItem :item="item"></todoItem>
+    </template>
   </todoListWrap>
 </template>
 

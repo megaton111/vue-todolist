@@ -12,9 +12,9 @@ import "@/assets/scss/_index.scss";
 // library.add( faCheckSquare );
 
 import Unicon from 'vue-unicons'
-import { uniLayerGroupMonochrome, uniCarWash, uniTrashAlt, uniSquareFull, uniCheckSquare  } from 'vue-unicons/dist/icons'
+import { uniTrashAlt, uniSquareFull, uniCheckSquare, uniEditAlt, uniCheckCircle } from 'vue-unicons/dist/icons'
 
-Unicon.add([uniLayerGroupMonochrome, uniCarWash, uniTrashAlt, uniSquareFull, uniCheckSquare]); 
+Unicon.add([uniTrashAlt, uniSquareFull, uniCheckSquare, uniEditAlt, uniCheckCircle]); 
 
 const app = createApp(App);
 // app.component('font-awesome-icon', FontAwesomeIcon)
