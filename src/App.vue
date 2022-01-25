@@ -1,51 +1,32 @@
 <template>
   
-  <headerWrap title="Task">
+  <header-wrap title="Task">
     <count label="남은 할일" /> 
-  </headerWrap>
+  </header-wrap>
 
-  <containerWrap>
+  <container-wrap>
     
-    <tabButtonWrap 
+    <tabbutton-wrap 
       :items="tabs" 
       :current="comp" 
       @updateTab="tabClick" 
     />
-    <tabContentWrap>
+    <tabcontent-wrap>
       <keep-alive>
         <component v-bind:is="comp"></component> 
       </keep-alive>
-    </tabContentWrap> <!-- end of tab-contents -->
+    </tabcontent-wrap> <!-- end of tab-contents -->
     
-    <registerWrap v-if="comp == 'TODO'"></registerWrap>
+    <register-wrap v-if="comp == 'TODO'"></register-wrap>
 
-  </containerWrap>
+  </container-wrap>
 
 </template>
 
 <script>
 import {ref} from 'vue';
-import headerWrap from './components/layout/header' ; 
-import containerWrap from './components/layout/container' ; 
-import tabButtonWrap from './components/layout/tabButtons' ; 
-import tabContentWrap from './components/layout/tabContent' ; 
-import registerWrap from './components/layout/register' ; 
-import TODO from './components/common/todo' ; // eslint-disable-line no-unused-vars
-import DONE from './components/common/done' ; // eslint-disable-line no-unused-vars
-import count from './components/common/count' ; 
-
 export default {
   name: 'App',
-  components: {
-    headerWrap , 
-    containerWrap ,
-    tabButtonWrap , 
-    tabContentWrap , 
-    registerWrap , 
-    TODO ,
-    DONE ,
-    count
-  },
   setup() {
     let comp = ref('TODO') 
     ,   tabs = [ { name : 'TO DO', value : 'TODO' }, { name : 'DONE', value : 'DONE' } ] 

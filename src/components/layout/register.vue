@@ -6,31 +6,15 @@
 </template>
 
 <script>
-  import {ref} from 'vue';
-  import { useStore } from "vuex";
+  import todoMixin from '../mixin/todoMixin' ; 
   export default {
+    mixins : [todoMixin] ,
     name : 'register' ,
     
-    // data () {
-    //   return {
-    //     todoValue : null 
-    //   }
-    // } ,
-    // methods : {
-    //   addListHandler() {
-    //     this.$store.commit("addList", this.todoValue ) ; 
-    //     this.todoValue = '' ; 
-    //   }
-    // }
-
-    setup() {
-      const store = useStore();
-      let todoValue = ref('') ; 
-      const addListHandler = () => {
-        store.commit("addList", todoValue.value ) ; 
-        todoValue.value = '' ;
-      };
-      return { todoValue , addListHandler } ;
-    }
+    data () {
+      return {
+        todoValue : null 
+      }
+    } ,
   }
 </script>

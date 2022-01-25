@@ -32,8 +32,9 @@
 </template>
 
 <script>
-  // import { computed } from "vue";
+  import todoMixin from '../mixin/todoMixin'
   export default {
+    mixins : [todoMixin] ,
     name : 'todoItem' , 
     props : [ 'item' ] ,
     data () {
@@ -42,17 +43,5 @@
         openModify : false , 
       }
     } , 
-    methods : {
-      removeHandler( value ) { this.$store.commit( "removeList", value ) ; } , 
-      checkHandler ( value ) { this.$store.commit( "checkList", value ) ; } , 
-      modifyHandler( value ) { 
-        this.$store.commit( "modifyList", value ) ; 
-        this.modifyToggle( false ) ; 
-      } , 
-      modifyToggle( value ) { 
-        this.modifyTitle = this.item.title ; 
-        this.openModify = value ;
-      } ,
-    } ,
   }
 </script>
