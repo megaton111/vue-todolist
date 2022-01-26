@@ -35,4 +35,17 @@
       cursor: pointer;
     }
   }
+
+  .date {
+    flex-basis: 120px ;
+    input {
+      width: 100% ; 
+      border-color : #8c49f8 ; 
+    }
+
+    .v3dp__popout{
+      bottom : 100% ; 
+      transform : translateY( -10px ) ; 
+    }
+  }
 }

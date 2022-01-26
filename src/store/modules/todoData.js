@@ -19,9 +19,20 @@ const todoStore = {
   },
   mutations: {
     addList(state, value) {
-      if (value == '') return;
+      if (value.title == '' || value.title == null ) return;
       let index = state.idx++; 
-      state.todoList.push({ title: value, done: false, index : index }); 
+      let setDate = value.date.getMonth() + 1 + '월 ' + value.date.getDate() + '일' ;
+      state.todoList.push(
+        {
+          index: index , 
+          title: value.title ,
+          done: false, 
+          date: {
+            original: value.date, 
+            setDate : setDate
+          } 
+        }
+      ); 
     },
     removeList(state, value) {
       let findIdx = findListIdx(value, state.todoList); 

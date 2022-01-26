@@ -3,12 +3,15 @@
     
     <div class="check">
       <button type="button" :class="{ active : item.done }" @click="checkHandler( item.index )">
-        <unicon name="check-square" fill="#333" width="16" height="16" v-if="item.done"></unicon>
-        <unicon name="square-full" fill="#333" width="16" height="16" v-else></unicon>
+        <unicon name="check-square" fill="#333" width="18" height="18" v-if="item.done"></unicon>
+        <unicon name="square-full" fill="#333" width="18" height="18" v-else></unicon>
       </button>
     </div>
     
-    <div class="title">{{ item.title }}</div>
+    <div class="date">{{ item.date.setDate }}</div>
+    <div class="title">
+      <div class="ellipse">{{ item.title }}</div>
+    </div>
 
     <div class="btns" v-if="!item.done">
       <button type="button" @click="modifyToggle( true )">
@@ -32,7 +35,7 @@
 </template>
 
 <script>
-  import todoMixin from '../mixin/todoMixin'
+  import todoMixin from '../mixin/todoMixin' ;
   export default {
     mixins : [todoMixin] ,
     name : 'todoItem' , 
@@ -42,6 +45,6 @@
         modifyTitle : null ,
         openModify : false , 
       }
-    } , 
+    } ,
   }
 </script>

@@ -15,8 +15,13 @@ let todoMixin = {
       this.openModify = value ;
     },
     addListHandler() {
-      this.$store.commit("addList", this.todoValue ) ; 
-      this.todoValue = '' ;
+      let addObj = {
+        title: this.todoValue,
+        date: this.todoDate
+      };
+      this.$store.commit("addList", addObj ) ; 
+      this.todoValue = '';
+      this.todoDate = new Date() ; 
     }
   }
 };
